@@ -1,0 +1,17 @@
+.TodoCounter-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+
+  padding-top: 48px;
+}
+
+.TodoCounter-subtitle {
+  color: var(--blue-secondary);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0 32px;
+}

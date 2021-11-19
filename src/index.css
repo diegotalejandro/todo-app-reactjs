@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background: #f2f4f5; */
+  /* color: #1e1e1f; */
+  color: #f2f4f5;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  /* font-family: "Quicksand", sans-serif; */
+  /* font-family: "Share Tech Mono", monospace; */
+}
+
+#root {
+  /* margin: 0 24px; */
+  position: relative;
+  min-height: 100vh;
+  --black: #140f07;
+  --black-blue: #00123c;
+  --blue: #001952;
+  --blue-secondary: #536cac;
+  --rose-primary: #f869b8;
+  --light-blue: #07c1ff;
+  --sky-blue: #0ffff8;
+  background-color: var(--blue);
+}
