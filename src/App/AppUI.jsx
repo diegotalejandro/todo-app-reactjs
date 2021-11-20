@@ -7,6 +7,7 @@ import { TodoList } from "../components/TodoList/index";
 import { TodoSearch } from "../components/TodoSearch/index";
 import { CreateTodoButton } from "../components/CreateTodoButton/index";
 import { Modal } from "../components/Modal";
+import { TodoForm } from "../components/TodoForm";
 
 function AppUI() {
   const {
@@ -18,14 +19,16 @@ function AppUI() {
     todoList,
     searchValue,
     setSearchValue,
+    openModal,
+    setOpenModal,
   } = useContext(TodoContext);
   return (
-    <>
+    <div className="App">
       <div className="app-container">
         <TodoCounter />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
         <TodoList>
-          {todoFilteredList.map((todo) => (
+          {todoFilteredList?.map((todo) => (
             <TodoItem
               key={todo.text}
               text={todo.text}
@@ -34,15 +37,21 @@ function AppUI() {
               onDelete={() => deleteTodo(todo.id)}
             />
           ))}
-          {loading ? <h3>Loading</h3> : null}
-          {error ? <h3>{error}</h3> : null}
+          {todoFilteredList?.length
+            ? null
+            : !loading && <h3 className="message">No tasks</h3>}
+          {loading ? <h3 className="message">Loading</h3> : null}
+          {error ? <h3 className="message">{error}</h3> : null}
         </TodoList>
-        {/* <Modal>
-          <h1>Modal!</h1>
-        </Modal> */}
-        <CreateTodoButton />
+        {!!openModal && (
+          <Modal>
+            <TodoForm setOpenModal={setOpenModal} />
+          </Modal>
+        )}
+
+        <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
       </div>
-    </>
+    </div>
   );
 }
 

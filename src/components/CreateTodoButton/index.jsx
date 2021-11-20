@@ -3,9 +3,9 @@ import { AppUI } from "./AppUI";
 
 function CreateTodoButton(props) {
   const onClickButton = (msg) => {
-    alert(msg);
+    props.setOpenModal((prevState) => !prevState);
   };
-  return <AppUI onClickButton={onClickButton} />;
+  return <AppUI onClickButton={onClickButton} openModal={props.openModal} />;
 }
 
 export { CreateTodoButton };

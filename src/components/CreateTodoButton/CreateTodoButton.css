@@ -15,6 +15,7 @@
   align-items: center;
   height: 64px;
   width: 64px;
+  z-index: 1;
 }
 
 .CreateTodoContainer > button {
@@ -36,4 +37,9 @@
 
 .CreateTodoContainer > button:hover {
   transform: rotate(360deg);
+}
+
+.ButtonModalOpen {
+  transform: rotate(45deg);
+  transition: 0.5s ease;
 }

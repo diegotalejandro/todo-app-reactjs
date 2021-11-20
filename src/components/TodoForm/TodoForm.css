@@ -1,0 +1,75 @@
+.TodoForm-form {
+  width: 90%;
+  max-width: 300px;
+  background-color: #001952;
+  padding: 33px 40px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.TodoForm-form label {
+  text-align: center;
+  font-weight: bold;
+  /* font-size: #1e1e1f; */
+  margin-bottom: 45px;
+}
+
+.TodoForm-form textarea {
+  background-color: #00123c;
+  border: 2px, solid #202329;
+  border-radius: 6px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  color: #536cac;
+  font-size: 15px;
+  text-align: center;
+  padding: 12px;
+  height: 96px;
+  width: calc(100%-25px);
+}
+
+.TodoForm-form textarea::placeholder {
+  color: #536cac;
+  font-weight: bold;
+}
+.TodoForm-form textarea:focus {
+  outline-color: #61dafa;
+}
+
+.TodoForm-button-container {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.TodoForm-button-container button:nth-child(1) {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+}
+
+.TodoForm-button-container button:nth-child(2) {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: #202329;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 6px;
+  border: none;
+
+  background-color: #f869b8;
+  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}
