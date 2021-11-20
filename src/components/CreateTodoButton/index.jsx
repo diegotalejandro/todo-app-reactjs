@@ -5,7 +5,13 @@ function CreateTodoButton(props) {
   const onClickButton = (msg) => {
     props.setOpenModal((prevState) => !prevState);
   };
-  return <AppUI onClickButton={onClickButton} openModal={props.openModal} />;
+  return (
+    <AppUI
+      onClickButton={onClickButton}
+      openModal={props.openModal}
+      fixed={props.fixed}
+    />
+  );
 }
 
 export { CreateTodoButton };

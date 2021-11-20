@@ -43,6 +43,13 @@ function TodoProvider(props) {
     saveTodos(newTodosList);
   };
 
+  const notCompleteTodo = (id) => {
+    const todoIndex = todoList.findIndex((todo) => todo.id === id);
+    const newTodosList = [...todoList];
+    newTodosList[todoIndex].completed = false;
+    saveTodos(newTodosList);
+  };
+
   const deleteTodo = (id) => {
     const todoIndex = todoList.findIndex((todo) => todo.id === id);
     const newTodosList = [...todoList];
@@ -59,6 +66,7 @@ function TodoProvider(props) {
         todoFilteredList,
         addTodo,
         completeTodo,
+        notCompleteTodo,
         deleteTodo,
         searchValue,
         setSearchValue,

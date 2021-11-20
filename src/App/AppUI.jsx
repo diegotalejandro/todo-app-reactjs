@@ -8,11 +8,15 @@ import { TodoSearch } from "../components/TodoSearch/index";
 import { CreateTodoButton } from "../components/CreateTodoButton/index";
 import { Modal } from "../components/Modal";
 import { TodoForm } from "../components/TodoForm";
+import { TodoLoading } from "../components/TodoLoading";
+import { TodoError } from "../components/TodoError";
+import { TodoEmpty } from "../components/TodoEmpty";
 
 function AppUI() {
   const {
     todoFilteredList,
     completeTodo,
+    notCompleteTodo,
     deleteTodo,
     loading,
     error,
@@ -34,14 +38,24 @@ function AppUI() {
               text={todo.text}
               completed={todo.completed}
               onComplete={() => completeTodo(todo.id)}
+              onNotComplete={() => notCompleteTodo(todo.id)}
               onDelete={() => deleteTodo(todo.id)}
             />
           ))}
           {todoFilteredList?.length
             ? null
-            : !loading && <h3 className="message">No tasks</h3>}
-          {loading ? <h3 className="message">Loading</h3> : null}
-          {error ? <h3 className="message">{error}</h3> : null}
+            : !loading && (
+                <TodoEmpty
+                  searchValue={searchValue ? true : false}
+                  setOpenModal={setOpenModal}
+                  openModal={openModal}
+                />
+              )}
+
+          {loading
+            ? new Array(5).fill(1).map((a, i) => <TodoLoading key={i} />)
+            : null}
+          {error ? <TodoError error={error} /> : null}
         </TodoList>
         {!!openModal && (
           <Modal>
@@ -49,7 +63,11 @@ function AppUI() {
           </Modal>
         )}
 
-        <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
+        <CreateTodoButton
+          setOpenModal={setOpenModal}
+          openModal={openModal}
+          fixed={true}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,26 @@
+.TodoIcon-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+}
+
+.TodoIcon-SVG {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.15s;
+}
+
+.TodoIcon-container:hover .Icon-SVG--check--completed {
+  fill: gray;
+}
+
+.TodoIcon-container:hover .Icon-SVG--check--notCompleted {
+  fill: #4caf50;
+}
+
+.TodoIcon-container:hover .Icon-SVG--delete {
+  /* fill: red; */
+}
